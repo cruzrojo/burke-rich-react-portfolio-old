@@ -9,27 +9,27 @@ export default class PortfolioContainer extends Component {
         this.state = {
             pageTitle: "Welcome to my portfolio...sucka!",
             data: [
-                {title: "Quoth", url: 'quoth.com' },
-                {title: "Eventsucks", url: 'eventsucks.com' },
-                {title: "Ministry Unsafe", url: 'ministryunsafe.com' },
-                {title: "Sucky Shooter", url: 'suckyshooter.com' },
+                {title: "Quoth", url: 'quoth.com', category: 'eCommerce' },
+                {title: "Eventsucks", url: 'eventsucks.com', category: 'Scheduling' },
+                {title: "Ministry Unsafe", url: 'ministryunsafe.com', category: 'Enterprise' },
+                {title: "Sucky Shooter", url: 'suckyshooter.com', category: 'eCommerce' },
             ]
         }
 
-        this.handlePageTitleUpdate = this.handlePageTitleUpdate.bind(this)
-
+        this.handleFilter = this.handleFilter.bind(this);
     }
-   
-    portfolioItems() {
 
-        return this.state.data.map(item => {
-            return <PortfolioItem title={item.title} url={item.url} />
+    handleFilter(filter) {
+        this.setState({
+            data: this.state.data.filter(item => {
+                return item.category === filter;
+            })
         })
     }
 
-    handlePageTitleUpdate() {
-        this.setState({
-            pageTitle: 'AHHHHHHHGGG MY EEEYYYEEEESSSSS'
+    portfolioItems() {
+        return this.state.data.map(item => {
+            return <PortfolioItem title={item.title} url={item.url} />
         })
     }
 
@@ -38,11 +38,12 @@ export default class PortfolioContainer extends Component {
             <div>
                 <h2>{this.state.pageTitle}</h2>
 
+                <button onClick={() => this.handleFilter('eCommerce')}>eCommerce</button>
+                <button onClick={() => this.handleFilter('Scheduling')}>Scheduling</button>
+                <button onClick={() => this.handleFilter('Enterprise')}>Enterprise</button>
+
                 {this.portfolioItems()}
 
-                <hr/>
-
-                <button onClick={this.handlePageTitleUpdate}>Change Title</button>
             </div>
         )
     }
