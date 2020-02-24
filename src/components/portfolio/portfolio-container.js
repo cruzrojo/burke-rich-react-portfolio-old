@@ -15,12 +15,21 @@ export default class PortfolioContainer extends Component {
                 {title: "Sucky Shooter", url: 'suckyshooter.com' },
             ]
         }
+
+        this.handlePageTitleUpdate = this.handlePageTitleUpdate.bind(this)
+
     }
    
     portfolioItems() {
 
         return this.state.data.map(item => {
-            return <PortfolioItem title={item.title} />
+            return <PortfolioItem title={item.title} url={item.url} />
+        })
+    }
+
+    handlePageTitleUpdate() {
+        this.setState({
+            pageTitle: 'AHHHHHHHGGG MY EEEYYYEEEESSSSS'
         })
     }
 
@@ -30,6 +39,10 @@ export default class PortfolioContainer extends Component {
                 <h2>{this.state.pageTitle}</h2>
 
                 {this.portfolioItems()}
+
+                <hr/>
+
+                <button onClick={this.handlePageTitleUpdate}>Change Title</button>
             </div>
         )
     }
