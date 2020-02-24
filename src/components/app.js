@@ -17,25 +17,23 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
-
+        <h1>Burke M Rich Portfolio</h1>
+        <div>
+          {moment().format('MMMM Do YYYY, h:mm:ss a')}
+        </div>
         <Router>
           <div>
             <NavigationContainer />
             <switch>
               <Route exact path="/" component={Home} />
               <Route path="/about-me" component={About} />
-              <Route path="/blog" component={Blog} />
               <Route path="/contact" component={Contact} />
+              <Route path="/blog" component={Blog} />
             </switch>
 
           </div>
         </Router>
 
-        <h1>Burke M Rich Portfolio</h1>
-        <div>
-          {moment().format('MMMM Do YYYY, h:mm:ss a')}
-        </div>
-        <PortfolioContainer />
       </div>
     );
   }
