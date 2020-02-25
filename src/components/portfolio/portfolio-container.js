@@ -28,10 +28,9 @@ export default class PortfolioContainer extends Component {
     axios
       .get("https://burkemrich.devcamp.space/portfolio/portfolio_items")
       .then(response => {
-        console.log("response data", response);
         this.setState({
           data: response.data.portfolio_items
-        })
+        });
       })
       .catch(error => {
         console.log(error);
@@ -40,14 +39,7 @@ export default class PortfolioContainer extends Component {
 
   portfolioItems() {
     return this.state.data.map(item => {
-      console.log("item")
-      return (
-        <PortfolioItem
-          key={item.id}
-          title={item.name}
-          url={item.url}
-          slug={item.id} />
-      );
+      return <PortfolioItem key={item.id} item={item} />;
     });
   }
 
@@ -59,7 +51,6 @@ export default class PortfolioContainer extends Component {
     if (this.state.isLoading) {
       return <div>Loading...</div>;
     }
-
 
     return (
       <div>
