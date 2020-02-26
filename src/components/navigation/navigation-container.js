@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import moment from "moment";
 
 export default class NavigationContainer extends Component {
     constructor() {
@@ -31,7 +32,10 @@ export default class NavigationContainer extends Component {
                         <NavLink to="/blog" activeClassName="nav-link-active">Blog</NavLink>
                     </div>
                 </div>
-                <div className="right-side">Burke M Rich</div>
+                <div className="right-side">
+                    <div>Burke M Rich</div>
+                    <div>{moment().format("MMMM Do YYYY, h:mm:ss a")}</div>
+                </div>
             </div>
         )
     }
