@@ -10,7 +10,7 @@ export default function(props) {
 
   const { id, description, thumb_image_url, logo_url, name } = props.item;
   return (
-    <div>
+    <div className="portfolio-class-name">
       <div>
         <h1>{name}</h1>
         </div>
