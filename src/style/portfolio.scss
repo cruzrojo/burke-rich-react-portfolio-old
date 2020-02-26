@@ -29,6 +29,11 @@
                 transition: 1s ease-in-out;
                 color: transparent;
             }
+            
+            .name {
+                transition: 1s ease-in-out;
+                color: transparent;
+            }
         }
     
         .img-text-wrapper:hover .subtitle {
@@ -40,7 +45,17 @@
             width: 50%;
             margin: 20px;
         }
+    
+        .img-text-wrapper:hover .name {
+            color: $teal;
+            font-weight: 400px;
+        }
 
+        .logo-wrapper img {
+            width: 50%;
+            margin: 20px;
+        }
+            
     }
 }
 
