@@ -34,7 +34,9 @@ export default class NavigationContainer extends Component {
                 </div>
                 <div className="right-side">
                     <div>Burke M Rich</div>
-                    <div>{moment().format("MMMM Do YYYY, h:mm:ss a")}</div>
+                    <div>
+                        <p1>{moment().format("MMMM Do YYYY, h:mm:ss a")}</p1>
+                    </div>
                 </div>
             </div>
         )
