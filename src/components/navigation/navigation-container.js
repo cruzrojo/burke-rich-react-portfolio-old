@@ -38,7 +38,7 @@ const NavigationComponent = props => {
         ) : null}
       </div>
 
-      <div className="right-side">Burke M Rich</div>
+      <div className="right-side">BURKE M RICH</div>
     </div>
   );
 };
