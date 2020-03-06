@@ -9,14 +9,11 @@ const PortfolioSidebarList = props => {
         </div>
         <h1 className="title">{portfolioItem.name}</h1>
         <h2>{portfolioItem.id}</h2>
-        <h3 className="description">{portfolioItem.description}</h3>
       </div>
     );
   });
 
-  return <div className="portfolio-sidebar-list-wrapper">
-      {portfolioList}
-      </div>;
+  return <div className="portfolio-sidebar-list-wrapper">{portfolioList}</div>;
 };
 
 export default PortfolioSidebarList;

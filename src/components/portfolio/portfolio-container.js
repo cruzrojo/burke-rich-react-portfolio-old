@@ -8,6 +8,7 @@ export default class PortfolioContainer extends Component {
     super();
 
     this.state = {
+      pageTitle: "Welcome to my portfolio",
       isLoading: false,
       data: []
     };
@@ -38,7 +39,6 @@ export default class PortfolioContainer extends Component {
 
   portfolioItems() {
     return this.state.data.map(item => {
-      console.log(item)
       return <PortfolioItem key={item.id} item={item} />;
     });
   }
@@ -53,27 +53,28 @@ export default class PortfolioContainer extends Component {
     }
 
     return (
-        <div className="portfolio-items-wrapper">
-        <button className ="btn" onClick={() => this.handleFilter("eCommerce")}>
+      <div className="portfolio-items-wrapper">
+        <button className="btn" onClick={() => this.handleFilter("eCommerce")}>
           eCommerce
         </button>
-        <button className ="btn" onClick={() => this.handleFilter("Scheduling")}>
+        <button className="btn" onClick={() => this.handleFilter("Scheduling")}>
           Scheduling
         </button>
-        <button className ="btn" onClick={() => this.handleFilter("Enterprise")}>
+        <button className="btn" onClick={() => this.handleFilter("Enterprise")}>
           Enterprise
         </button>
-        <button className ="btn" onClick={() => this.handleFilter("Recipes")}>
-          Recipes
-        </button>
-        <button className ="btn" onClick={() => this.handleFilter("Sci Fi")}>
+        <button className="btn" onClick={() => this.handleFilter("Sci Fi")}>
           Sci Fi
         </button>
-        <button className ="btn" onClick={() => this.handleFilter("Education")}>
+        <button className="btn" onClick={() => this.handleFilter("Recipes")}>
+          Recipes
+        </button>
+        <button className="btn" onClick={() => this.handleFilter("Education")}>
           Education
         </button>
-          {this.portfolioItems()}
-        </div>
+
+        {this.portfolioItems()}
+      </div>
     );
   }
 }

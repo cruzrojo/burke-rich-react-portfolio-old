@@ -1,12 +1,11 @@
-import React from 'react';
-import axios from "axios";
+import React from "react";
 
-import PortfolioContainer from "../portfolio/portfolio-container"
+import PortfolioContainer from "../portfolio/portfolio-container";
 
-export default function () {
-    return (
-        <div>
-        <PortfolioContainer />
-        </div>
-    )
+export default function() {
+  return (
+    <div>
+      <PortfolioContainer />
+    </div>
+  );
 }
